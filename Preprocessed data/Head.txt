@@ -1,0 +1,1 @@
+Timestamp (ms), X (m/s^2), Y (m/s^2), Z (m/s^2)

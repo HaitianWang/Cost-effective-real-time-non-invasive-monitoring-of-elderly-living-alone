@@ -1,0 +1,3 @@
+Timestamp(ms),X(m/s^2),Y(m/s^2),Z(m/s^2)
+Timestamp(ms),knull,X(m/s^2),Y(m/s^2),Z(m/s^2)
+Timestamp(ms),X(m/s^2),Y(m/s^2),Z(m/s^2),state
