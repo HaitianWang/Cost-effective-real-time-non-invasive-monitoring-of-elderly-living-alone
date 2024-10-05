@@ -5,7 +5,7 @@ from matplotlib.animation import FuncAnimation
 import numpy as np
 
 # 初始化蓝牙串口连接
-bluetooth_serial = serial.Serial('COM8', 115200, timeout=1)  # 请替换为正确的COM端口号
+bluetooth_serial = serial.Serial('COM7', 115200, timeout=1)  # 请替换为正确的COM端口号
 
 # 初始化图形
 fig, ax = plt.subplots()

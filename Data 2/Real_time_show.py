@@ -6,7 +6,7 @@ import numpy as np
 from collections import deque
 
 # 初始化蓝牙串口连接
-bluetooth_serial = serial.Serial('COM8', 115200, timeout=1)  # 请替换为正确的COM端口号
+bluetooth_serial = serial.Serial('COM7', 115200, timeout=1)  # 请替换为正确的COM端口号
 
 # 初始化图形
 fig, ax = plt.subplots()
@@ -16,7 +16,6 @@ x_data, y_data, z_data, time_data = deque(maxlen=1000), deque(maxlen=1000), dequ
 line_x, = ax.plot([], [], label='X-axis (m/s^2)', color='r')
 line_y, = ax.plot([], [], label='Y-axis (m/s^2)', color='g')
 line_z, = ax.plot([], [], label='Z-axis (m/s^2)', color='b')
-
 def init():
     ax.set_xlim(0, 10)  # x轴初始范围为10秒
     ax.set_ylim(-10, 10)  # 假定加速度范围为±10m/s^2

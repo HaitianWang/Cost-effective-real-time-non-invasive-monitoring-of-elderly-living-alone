@@ -40,6 +40,6 @@ void loop() {
   Serial.print(event.acceleration.y); Serial.print(", ");
   Serial.println(event.acceleration.z);
   
-  // 延迟100毫秒
+  // 延迟10毫秒
   delay(100);
 }
