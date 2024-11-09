@@ -26,7 +26,7 @@ le = LabelEncoder()
 y = le.fit_transform(y)
 
 # Step 2: Split Data into Training and Testing Sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=42)
 
 # Step 3: Scale the Features
 scaler = StandardScaler()
