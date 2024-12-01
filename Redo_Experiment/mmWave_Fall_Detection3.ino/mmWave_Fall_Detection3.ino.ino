@@ -13,34 +13,15 @@ void setup() {
 
   // 初始化传感器
   while (!radar.begin()) {
-    Serial.println("NO Devices!");
+    Serial.println("initial fail, retry...");
     delay(1000);
   }
-  Serial.println("Device connected!");
+  Serial.println("C4001 initial successfully");
 
   // 设置传感器为速度模式
   radar.setSensorMode(eSpeedMode);
 
-  // 设置检测范围和目标检测阈值
-  // 最小检测距离 11cm，最大检测距离 12m，阈值为 10
-  if (radar.setDetectThres(/*min*/ 11, /*max*/ 1200, /*thres*/ 10)) {
-    Serial.println("Set detect threshold successfully");
-  } else {
-    Serial.println("Failed to set detect threshold");
-  }
 
-  // // 开启微动检测
-  // radar.setFrettingDetection(eON);
-
-  // 打印配置的参数
-  Serial.print("Min range = ");
-  Serial.println(radar.getTMinRange());
-  Serial.print("Max range = ");
-  Serial.println(radar.getTMaxRange());
-  Serial.print("Threshold range = ");
-  Serial.println(radar.getThresRange());
-  Serial.print("Fretting detection = ");
-  Serial.println(radar.getFrettingDetection());
 
   // 输出CSV格式的标题行
   Serial.println("Timestamp(ms), Target Number, Distance(m), Speed(m/s), Energy");
@@ -58,7 +39,7 @@ void loop() {
     // 获取目标的速度、距离和信号能量
     float targetSpeed = radar.getTargetSpeed();  // 目标速度，单位为 m/s
     float targetRange = radar.getTargetRange();  // 目标距离，单位为 m
-    uint32_t targetEnergy = radar.getTargetEnergy(); // 目标信号能量
+    uint16_t targetEnergy = radar.getTargetEnergy(); // 目标信号能量
 
     // 输出CSV格式的数据行
     Serial.print(currentTime);  // 时间戳
@@ -76,6 +57,6 @@ void loop() {
     Serial.println(", 0, N/A, N/A, N/A");  // 未检测到目标时输出
   }
 
-  // 设置合适的采集间隔（根据经验和文档推荐值设置为200ms以提高采样率）
-  delay(200);
+  // 设置合适的采集间隔，避免传感器过载（根据经验和文档推荐值设置为100ms以提高采样率）
+  delay(100);
 }
