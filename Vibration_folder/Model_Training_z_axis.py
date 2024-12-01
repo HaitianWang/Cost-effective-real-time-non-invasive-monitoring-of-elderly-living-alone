@@ -26,7 +26,7 @@ classes = y.unique()
 y_bin = label_binarize(y, classes=classes)
 
 # Step 2: 划分数据集为训练集和测试集
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.80, random_state=66)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.90, random_state=66)
 
 # Step 3: 标准化数据
 scaler = StandardScaler()

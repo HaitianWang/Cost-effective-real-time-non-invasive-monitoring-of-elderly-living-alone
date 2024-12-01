@@ -11,7 +11,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 
 # Step 1: Load and Preprocess Data
-file_path = "feature_extracted_radar_data.csv"
+file_path = r"C:\Simon\Master of Professional Engineering\Engineering Research Project\Experiment\mmWave_Fall_Detection3.ino\feature_extracted_radar_data.csv"
 df = pd.read_csv(file_path)
 
 # Drop rows with missing values (if any)
@@ -26,7 +26,7 @@ le = LabelEncoder()
 y = le.fit_transform(y)
 
 # Step 2: Split Data into Training and Testing Sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.8, random_state=42)
 
 # Step 3: Scale the Features
 scaler = StandardScaler()

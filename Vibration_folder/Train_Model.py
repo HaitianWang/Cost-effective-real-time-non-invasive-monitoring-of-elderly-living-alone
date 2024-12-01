@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # 读取数据集
-df = pd.read_csv('extracted_features.csv')
+df = pd.read_csv(r'C:\Simon\Master of Professional Engineering\Engineering Research Project\Experiment\Vibration_folder\z_axis_extracted_features.csv')
 
 # 只选择与Z轴相关的特征
 features = ['mean_z', 'std_z', 'max_z', 'psd_z', 'dominant_freq_z']
